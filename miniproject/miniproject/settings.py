@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'studentmgnt',
     'authentication',
+    'allauth',
+    'allauth.account'
 ]
 
 MIDDLEWARE = [

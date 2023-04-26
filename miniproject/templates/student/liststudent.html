@@ -1,0 +1,38 @@
+{% extends 'basic.html' %}
+{% load static %}
+<div class="table-responsive">
+ 
+    <table
+      class="table table-hover"
+      style="margin-left: 25px; margin-top: 48px; max-width: 95%"
+    >
+      <thead class="thead" style="background-color: #031e23">
+        <tr class="style" style="color: white">
+          <th scope="col">Id</th>
+          <th scope="col">Student Name</th>
+          <th scope="col">Student Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Address</th>
+          <th scope="col">Created_at</th>
+          <th scope="col">Active</th>
+        </tr>
+      </thead>
+      <tbody style="background-color: #d3d3d3"></tbody>
+      <tbody>
+        {% csrf_token %}
+        {% for student in object_list %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ student.Studentname }}</td>
+          <td>{{ student.studentemail }}</td>
+          <td>{{ student.phone }}</td>
+          <td>{{ student.address }}</td>
+          <td>{{ student.created_at }}</td>
+          {% endfor%}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="{% static 'js/students.js' %}"></script>
